@@ -3,7 +3,7 @@ import { sidebarItems } from "~/constants";
 import { Link, NavLink } from "react-router";
 import { cn } from "~/lib/utils";
 
-const NavItems = () => {
+const NavItems = ({ handleClick }: {handleClick?: () => void}) => {
 
     const user = {
         name: "John Doe",
@@ -26,7 +26,7 @@ const NavItems = () => {
                 <div
                   className={cn("grip nav-item", {
                     "bg-primary-100 !text-white": isActive,
-                  })}
+                  })} onClick={handleClick}
                 >
                   <img
                     src={icon}
