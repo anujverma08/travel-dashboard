@@ -24,7 +24,7 @@ const StatsCard = ({
                 <img 
                   src={`/assests/icons/${isDecrement ? 'arrow-down-red.svg' : 'arrow-up-green.svg'}`}className="size-5" alt="arrow"
                   />
-                  <figcaption className={cn(inputs:)}
+                  {/* <figcaption className={cn(inputs:)} */}
               </figure>
             </div>
 
