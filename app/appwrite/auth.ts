@@ -63,13 +63,19 @@ const getGooglePicture = async (accessToken: string) => {
 
 export const loginWithGoogle = async () => {
     try {
-        account.createOAuth2Session(
+        const isProduction = window.location.hostname !== 'localhost';
+        const baseUrl = isProduction 
+            ? `https://tripwise-one.vercel.app`  // For Vercel: https://tripwise-one.vercel.app
+            : 'http://localhost:5173';
+
+        await account.createOAuth2Session(
             OAuthProvider.Google,
-            `${window.location.origin}/`,
-            `${window.location.origin}/404`
+            `https://tripwise-one.vercel.app/dashboard`, // Success redirect - goes to dashboard
+            `https://tripwise-one.vercel.app/`,          // Failure redirect - back to sign-in page
         );
     } catch (error) {
         console.error("Error during OAuth2 session creation:", error);
+        throw error;
     }
 };
 
