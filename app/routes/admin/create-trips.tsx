@@ -1,6 +1,6 @@
 import {Header} from "../../../components";
 import {ComboBoxComponent} from "@syncfusion/ej2-react-dropdowns";
-import type { Route } from './+types/create-trip'
+import type { Route } from './+types/create-trips'
 import {comboBoxItems, selectItems} from "~/constants";
 import {cn, formatKey} from "~/lib/utils";
 import {LayerDirective, LayersDirective, MapsComponent} from "@syncfusion/ej2-react-maps";
@@ -11,7 +11,7 @@ import {account} from "~/appwrite/client";
 import {useNavigate} from "react-router";
 
 export const loader = async () => {
-    const response = await fetch('https://restcountries.com/v3.1/all');
+    const response = await fetch('https://restcountries.com/v3.1/independent?status=true');
     const data = await response.json();
 
     return data.map((country: any) => ({

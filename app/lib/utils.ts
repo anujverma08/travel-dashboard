@@ -26,16 +26,34 @@ export function parseMarkdownToJson(markdownText: string): unknown | null {
   return null;
 }
 
-export function parseTripData(jsonString: string): Trip | null {
-  try {
-    const data: Trip = JSON.parse(jsonString);
+// export function parseTripData(jsonString: string): Trip | null {
+//   try {
+//     const data: Trip = JSON.parse(jsonString);
 
+//     return data;
+//   } catch (error) {
+//     console.error("Failed to parse trip data:", error);
+//     return null;
+//   }
+// }
+
+export function parseTripData(jsonString: string | undefined): Trip | null {
+  try {
+    // Add validation for undefined/null input
+    if (!jsonString || jsonString === 'undefined') {
+      console.error("Invalid input to parseTripData:", jsonString);
+      return null;
+    }
+
+    const data: Trip = JSON.parse(jsonString);
     return data;
   } catch (error) {
     console.error("Failed to parse trip data:", error);
+    console.error("Input was:", jsonString);
     return null;
   }
 }
+
 
 export function getFirstWord(input: string = ""): string {
   return input.trim().split(/\s+/)[0] || "";

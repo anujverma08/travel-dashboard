@@ -1,14 +1,9 @@
-import { Link, useLocation } from 'react-router'; // also fix: react-router → react-router-dom
-import { cn } from '~/lib/utils';
+import {Link, useLocation} from "react-router";
+import {cn} from "~/lib/utils";
+import {IntlBase} from "@syncfusion/ej2-base";
+import getActualDateTimeFormat = IntlBase.getActualDateTimeFormat;
+import {ButtonComponent} from "@syncfusion/ej2-react-buttons";
 
-// CommonJS-safe import for ej2-base
-import SyncfusionBase from '@syncfusion/ej2-base';
-const { IntlBase } = SyncfusionBase;
-const getActualDateTimeFormat = IntlBase.getActualDateTimeFormat;
-
-// CommonJS-safe import for ButtonComponent
-import SyncfusionButtons from '@syncfusion/ej2-react-buttons';
-const { ButtonComponent } = SyncfusionButtons;
 interface Props {
     title: string;
     description: string;
