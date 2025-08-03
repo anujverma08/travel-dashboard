@@ -48,7 +48,7 @@ A modern, full-stack travel agency management system built with React Router v7,
 
 1. **Clone the repository**
 
-git clone https://github.com/yourusername/tripwise.git
+git clone https://github.com/anujverma08/travel-dashboard.git
 cd tripwise
 
 
@@ -59,21 +59,21 @@ npm install
 3. **Environment Setup**
 Create a `.env` file in the root directory:
 
-Appwrite Configuration
+# Appwrite Configuration
 APPWRITE_ENDPOINT=https://fra.cloud.appwrite.io/v1
 APPWRITE_PROJECT_ID=your_project_id_here
 APPWRITE_DATABASE_ID=your_database_id_here
 APPWRITE_TRIPS_COLLECTION_ID=your_trips_collection_id
 APPWRITE_USER_COLLECTION_ID=your_users_collection_id
 
-Google AI Configuration
+# Google AI Configuration
 GOOGLE_AI_API_KEY=your_google_ai_api_key_here
 GEMINI_API_KEY=your_gemini_api_key_here
 
-External APIs
+# External APIs
 UNSPLASH_ACCESS_KEY=your_unsplash_api_key_here
 
-Stripe Configuration
+# Stripe Configuration
 STRIPE_SECRET_KEY=your_stripe_secret_key
 
 
