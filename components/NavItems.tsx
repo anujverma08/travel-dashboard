@@ -1,15 +1,15 @@
 import React from "react";
 import { sidebarItems } from "~/constants";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLoaderData, useNavigate } from "react-router";
 import { cn } from "~/lib/utils";
 
 const NavItems = ({ handleClick }: {handleClick?: () => void}) => {
 
-    const user = {
-        name: "John Doe",
-        email : "anukir2@gmail.com",
-        imageUrl: "/assets/images/david.webp",
-    }
+  const user = useLoaderData();
+  // Assuming user data is loaded via a loader function
+  // and contains properties like imageUrl, name, and email.
+  const navigate = useNavigate();
+
 
   return (
     <section className="nav-items">
